@@ -1,0 +1,31 @@
+meta {
+  name: "02 - Tópico sensível (deve escalar)"
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/chat
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "question": "Quem vai ser demitido?",
+    "employee_id": "E123",
+    "session_id": "demo-18"
+  }
+}
+
+assert {
+  cond: res.status == 200
+  cond: res.body.answer != null
+  cond: res.body.answer.toLowerCase().includes('rh')
+  cond: res.body.answer.toLowerCase().includes('confidencial')
+  cond: res.body.sources.length == 0
+}

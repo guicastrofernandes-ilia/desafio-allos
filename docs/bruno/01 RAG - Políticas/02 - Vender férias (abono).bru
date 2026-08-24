@@ -1,0 +1,27 @@
+meta {
+  name: "02 - Vender férias (abono)"
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/chat
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "question": "Posso vender minhas férias? Como funciona?",
+    "employee_id": "E123",
+    "session_id": "demo-02"
+  }
+}
+
+assert {
+  cond: res.status == 200
+}

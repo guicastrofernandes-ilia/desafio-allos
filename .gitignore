@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+.chroma/
+.checkpoints.sqlite
+.checkpoints.sqlite-shm
+.checkpoints.sqlite-wal
+results/
+!results/.gitkeep
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+locust_*.txt
+node_modules
+diagrams/*.png

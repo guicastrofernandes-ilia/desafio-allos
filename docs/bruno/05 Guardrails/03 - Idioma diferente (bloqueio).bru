@@ -1,0 +1,28 @@
+meta {
+  name: "03 - Idioma não pt-BR (deve bloquear)"
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/chat
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "question": "How many vacation days do I have?",
+    "employee_id": "E123",
+    "session_id": "demo-19"
+  }
+}
+
+assert {
+  cond: res.status == 422
+  cond: res.body.blocked == true
+}

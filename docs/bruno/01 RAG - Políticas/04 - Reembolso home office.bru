@@ -1,0 +1,23 @@
+meta {
+  name: "04 - Reembolso home office"
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8000/chat
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "question": "Como peço reembolso de home office?",
+    "employee_id": "E123",
+    "session_id": "demo-04"
+  }
+}

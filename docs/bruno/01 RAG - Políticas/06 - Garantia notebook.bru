@@ -1,0 +1,23 @@
+meta {
+  name: "06 - Garantia notebook"
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:8000/chat
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "question": "Qual o prazo de garantia do notebook?",
+    "employee_id": "E456",
+    "session_id": "demo-06"
+  }
+}

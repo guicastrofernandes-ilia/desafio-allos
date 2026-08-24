@@ -1,0 +1,23 @@
+meta {
+  name: "03 - Home office para gestores"
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/chat
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "question": "Qual a política de home office para gestores?",
+    "employee_id": "E123",
+    "session_id": "demo-03"
+  }
+}
